@@ -1,2 +1,8 @@
-alert icmp any any -> any any ( msg:"ICMP Traffic Detected"; sid:10000001; metadata:policy security-ips alert; )
-alert tcp any any -> $HOME_NET 80 (msg:"HTTP request detected"; flow:to_server,established; content:"GET"; http_method; sid:1000003;)
+# $Id: local.rules,v 1.11 2004/07/23 20:15:44 bmc Exp $
+# ----------------
+# LOCAL RULES
+# ----------------
+# This file intentionally does not come with signatures.  Put your local
+# additions here.
+alert icmp any any -> any any (msg:"Pinging...";sid:1000004;)
+
