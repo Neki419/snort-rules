@@ -1,0 +1,2 @@
+alert icmp any any -> any any ( msg:"ICMP Traffic Detected"; sid:10000001; metadata:policy security-ips alert; )
+alert tcp any any -> $HOME_NET 80 (msg:"HTTP request detected"; flow:to_server,established; content:"GET"; http_method; sid:1000003;)
